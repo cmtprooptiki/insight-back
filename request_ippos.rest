@@ -1,0 +1,853 @@
+// Create a user
+POST http://backend.paratiritirio-edsna.gr:5000/users
+Content-Type: application/json
+
+{
+    "name":"john doe",
+    "email":"john@gmail.com",
+    "password":"123456",
+    "confPassword":"123456",
+    "role":"user"
+
+}
+###
+// Create a useradmin
+POST http://backend.paratiritirio-edsna.gr:5000/users
+Content-Type: application/json
+
+{
+    "name":"admin",
+    "email":"admin@gmail.com",
+    "password":"123456",
+    "confPassword":"123456",
+    "role":"admin"
+
+}
+
+
+###
+//get all users
+GET http://localhost:5000/users
+
+###
+//get single user
+GET http://localhost:5000/users/37ca1953-2a98-4623-8a51-99729ca432da
+
+###
+//update user
+PATCH http://localhost:5000/users/5506e5e3-b14f-4852-b1d3-d91082814a48
+Content-Type: application/json
+
+{
+    "name":"john updated",
+    "email":"john@gmail.com",
+    "password":"",
+    "confPassword":"",
+    "role":"user"
+
+}
+###
+//delete user
+DELETE http://localhost:5000/users/9cfa3afb-cbf8-43be-bf98-4d7d0d6c816f
+
+###
+//Login user
+POST https://api.cashflow.cmtprooptiki.gr:5000/login
+Content-Type: application/json
+
+{
+    "email":"admin@gmail.com",
+    "password":"123456"
+  
+}
+
+###
+GET http://localhost:5000/me
+
+###
+DELETE http://backend.paratiritirio-edsna.gr:5000/logout
+
+
+###
+//Login user
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"admin@gmail.com",
+    "password":"123456"
+  
+}
+###
+###
+//get all products
+GET http://localhost:5000/products
+
+
+###
+//get single product
+GET http://localhost:5000/products/d21f1114-dc64-4eeb-a600-30a6b912653b
+
+###
+// post data product
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+    "name":"product 90",
+    "price":8953
+    
+}
+
+###update data product
+// post data product
+PATCH  http://localhost:5000/products/91960ad8-3868-448f-b4e2-acf5024b10b3
+Content-Type: application/json
+
+{
+    "name":"product 6 updated",
+    "price":8953
+    
+}
+
+###Delete data product
+DELETE http://localhost:5000/products/d21f1114-dc64-4eeb-a600-30a6b912653b
+
+
+###Test url ngrock login
+POST  https://ee00-37-6-251-229.ngrok-free.app/login
+Content-Type: application/json
+
+{
+    "email":"john@gmail.com",
+    "password":"123456"
+  
+}
+
+###Test get users
+GET https://ee00-37-6-251-229.ngrok-free.app/products
+
+####Get building
+GET http://localhost:5000/buildings
+
+
+### Create a building
+POST http://localhost:5000/buildings
+Content-Type: application/json
+
+{
+    "name":"new peiroxi9",
+    "lat":38.06472785053161,
+    "lon":23.652481021764597
+
+}
+
+###
+//get single product
+GET http://localhost:5000/buildings/db6bff60-2142-4e2f-96da-207c83c65056
+###
+//update single product
+PATCH  http://localhost:5000/buildings/db6bff60-2142-4e2f-96da-207c83c65056
+Content-Type: application/json
+
+{
+    "name":"xomaterupdate25",
+    "lat":34.43334,
+    "lon":66.53334
+
+}
+
+
+###Delete building data base on uuid
+DELETE http://localhost:5000/buildings/25173aa3-4216-4d54-9251-acbe2f44ae5c
+
+
+
+####Get Metrics
+GET http://localhost:5000/metrics
+
+
+### Create a metrics
+POST http://localhost:5000/metrics
+Content-Type: application/json
+
+{
+    "name":"TSP"
+   
+
+}
+
+###
+//get single metrics
+GET http://localhost:5000/metrics/d1b10d14-7226-4362-b87a-bd2e0b08de87
+###
+//update single metrics
+PATCH http://localhost:5000/metrics/d1b10d14-7226-4362-b87a-bd2e0b08de87
+Content-Type: application/json
+
+{
+    "name":"vffvdfggdgdf"
+    
+}
+
+
+###Delete metrics data base on uuid
+DELETE http://localhost:5000/metrics/d1b10d14-7226-4362-b87a-bd2e0b08de87
+
+
+###GET BUILDING metrics
+GET http://localhost:5000/buildingmetrics
+
+
+###GET PUBLIC BUILDING METRICS 
+GET http://backend.paratiritirio-edsna.gr:5000/buildingmetrics-public?api_key=37ca1953-2a98-4623-8a51-99729ca432da
+
+
+###
+//Login user
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"elias3@gmail.com",
+    "password":"123456"
+  
+}
+###GET BUILDING metrics id
+GET http://localhost:5000/buildingmetrics/a79ec860-f8db-4f21-b008-5bec53c6120e
+
+### Create a building
+POST http://localhost:5000/createbuildingmetric
+Content-Type: application/json
+
+{
+    "buildingId":1,
+    "metricId":4,
+    "value":54,
+    "year":2023
+
+}
+
+###update single metrics
+PATCH http://localhost:5000/updatebuildingmetric/c8018cf5-d788-494e-84f4-f77abc2cdff5
+Content-Type: application/json
+
+{
+    "value":58,
+    "year":2024
+    
+}
+
+###update single metrics
+DELETE  http://localhost:5000/deletebuildingmetric/c8018cf5-d788-494e-84f4-f77abc2cdff5
+Content-Type: application/json
+
+
+####Check wind api
+POST https://api.windy.com/api/point-forecast/v2
+Content-Type: application/json
+
+{
+    "lat": 38.068968,
+    "lon": 23.65545900,
+    "model": "gfs",
+    "parameters": ["wind", "pressure"],
+    "key": "oChzM4Cv6v280SRmPY3Ok4FptEXxSxcJ"
+}
+
+
+
+####GET AVG GROUP BY 
+GET http://localhost:5000/buildingmetrics-geo
+
+###
+// Create a useradmin
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name":"admin",
+    "email":"admin@gmail.com",
+    "password":"123456",
+    "confPassword":"123456",
+    "profileImage":null,
+    "role":"admin"
+
+}
+
+###
+DELETE http://localhost:5000/logout
+
+### 
+//Login user   
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"admin@gmail.com",
+    "password":"123456"
+  
+}
+
+####Get Erga
+GET http://localhost:5000/erga
+
+
+####Get single Erga
+GET http://localhost:5000/erga/3
+
+
+###
+// Create a erga
+POST http://localhost:5000/erga
+Content-Type: application/json
+
+{   "logoImage":null,
+    "name":"paparapapa3",
+    "color":"yellow",
+    "sign_ammount_no_tax":"10",
+    "sign_date":"01-01-2022",
+    "status":"status",
+    "estimate_start_date":"02-02-2022",
+    "project_manager":"zaBETAK",
+    "customer_id":"1",
+    "shortname":"papa3",
+    "ammount":10000,
+    "ammount_vat":2400,
+    "ammount_total":10000,
+    "estimate_payment_date":"2000-01-01",
+    "estimate_payment_date_2":"2001-01-01",
+    "estimate_payment_date_3":"2002-01-01"
+    
+}
+
+###
+// Create Timologia
+POST http://localhost:5000/timologia
+Content-Type: application/json
+
+{
+    "invoice_date":"2002-02-02",
+    "ammount_no_tax": "1223",
+    "ammount_tax_incl": "182",
+    "actual_payment_date": "2024-04-04",
+    "ammount_of_income_tax_incl": "234",
+    "comments": "abv",
+    "invoice_number":"12345#",
+    "status_paid":"yes"
+}
+
+### //get Timologia
+GET http://localhost:5000/timologia
+
+### //Update Timologia
+PATCH http://localhost:5000/timologia/1
+Content-Type: application/json
+
+{
+    "invoice_date":"2002-02-02",
+    "estimate_payment_date":"2003-03-03",
+    "estimate_payment_date_2":"2022-01-01",
+    "estimate_payment_date_3":"2023-03-03",
+    "ammount_no_tax": "155",
+    "ammount_tax_incl": "258",
+    "estimate_tax": "555",
+    "actual_payment_date": "2024-04-04",
+    "ammount_of_income_tax_incl": "28",
+    "comments": "abv",
+    "verified": "Waafaafa",
+    "createdAt": "01-01-2001",
+    "updatedAt": "05-05-2005"
+}
+
+### // Delete Timologia
+
+DELETE http://localhost:5000/timologia/1
+
+### // Get Timologio By id
+
+GET http://localhost:5000/timologia/2
+
+// Create a erga
+PATCH http://localhost:5000/erga/3
+Content-Type: application/json
+
+{
+    "name":"REVERT",
+    "color":"yellow",
+    "sign_ammount_no_tax":"10",
+    "sign_date":"01-01-2022",
+    "status":"status",
+    "estimate_start_date":"02-02-2022",
+    "project_manager":"zaBETAK",
+    "customer_id":"1",
+    "shortname":"papa3",
+    "ammount":10000,
+    "ammount_vat":2400,
+    "ammount_total":10000,
+    "estimate_payment_date":"2000-01-01",
+    "estimate_payment_date_2":"2001-01-01",
+    "estimate_payment_date_3":"2002-01-01"
+
+}
+
+###update single metrics
+DELETE  http://localhost:5000/erga/4
+Content-Type: application/json
+
+###
+// Create customer
+POST http://localhost:5000/customer
+Content-Type: application/json
+
+{
+    "name":"CROWD",
+    "afm":"0953558844",
+    "phone":"2107298192",
+    "email":"crowd@gmail.com",
+    "address":"Spyrou merkouri 39",
+    "postal_code":"11111"
+
+}
+
+###
+// Create customer
+POST http://localhost:5000/customer
+Content-Type: application/json
+
+{
+    "name":"EDSNA",
+    "afm":"0953558844",
+    "phone":"2107298192",
+    "email":"edsna@gmail.com",
+    "address":"Spyrou merkouri 39",
+    "postal_code":"11111"
+
+}
+
+
+
+###update single customer
+PATCH http://localhost:5000/customer/1
+Content-Type: application/json
+
+{
+   "name":"CROWD POLICY",
+    "afm":"095888844",
+    "phone":"2107298195",
+    "email":"crowdpolicy@gmail.com",
+    "address":"Spyrou merkouri 38",
+    "postal_code":"1211"
+    
+}
+
+
+
+###update single metrics
+DELETE  http://localhost:5000/customer/2
+Content-Type: application/json
+
+
+####get PARADOTEA
+GET http://localhost:5000/paradotea
+
+###
+//get single metrics
+GET http://localhost:5000/paradotea/12
+###
+
+
+###
+// Create a paradotea 
+POST http://localhost:5000/paradotea
+Content-Type: application/json
+
+{
+    "part_number":"part_15",
+    "title":"Paradotea v",
+    "delivery_date":"2024-05-24",
+    "percentage":"23",
+    "erga_id":"1",
+    "timologia_id":null,
+    "ammount":10000,
+    "ammount_vat":2040,
+    "ammount_total":12400,
+    "estimate_payment_date":"2024-05-24",
+    "estimate_payment_date_2":"2001-01-01",
+    "estimate_payment_date_3":"2002-01-01"
+
+
+}
+
+###
+// update paradoteo 
+PATCH http://localhost:5000/paradotea/3
+Content-Type: application/json
+
+{
+    "part_number":"part_128",
+    "title":"ParadoteaAB",
+    "delivery_date":"2023-03-01",
+    "percentage":"23",
+    "erga_id":"1",
+    "timologia_id":"1",
+    "ammount":10000,
+    "ammount_vat":2400,
+    "ammount_total":15400,
+    "estimate_payment_date":"2024-05-24",
+    "estimate_payment_date_2":"2001-01-01",
+    "estimate_payment_date_3":"2002-01-01"
+
+
+
+}
+
+###update single metrics
+DELETE  http://localhost:5000/paradotea/26
+Content-Type: application/json
+
+### // Create Daneia
+POST http://localhost:5000/daneia
+Content-Type: application/json
+
+{
+    "name":"daneio",
+    "ammount":2000,
+    "status":"blabla"
+}
+### // Get Daneia
+GET http://localhost:5000/daneia
+
+### // Get Daneia By Id
+GET http://localhost:5000/daneia/1
+
+### // Update Daneia
+
+PATCH http://localhost:5000/daneia/1
+Content-Type: application/json
+
+{
+   "loan_type": "Kanonikos Eimai",
+    "timologia_id": null
+}
+
+### //delete daneio
+
+DELETE  http://localhost:5000/ek_tim/3
+
+
+###
+// Create a useradmin
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name":"admin",
+    "email":"admin@gmail.com",
+    "password":"123456",
+    "confPassword":"123456",
+    "role":"admin"
+
+}
+
+###
+// Create Timologia
+POST http://localhost:5000/ek_tim
+Content-Type: application/json
+
+{
+    "timologia_id":"2",
+    "bank_ammount":4000,
+    "bank_date":"2000-01-01",
+    "customer_ammount":2000,
+    "cust_date":"2000-01-01"
+}
+
+### // Get ekxorimena
+GET http://localhost:5000/ek_tim
+
+
+### //get list of erga names
+GET http://localhost:5000/getlistErgaNames
+
+### //create erga cat
+POST http://localhost:5000/ergacat
+Content-Type: application/json
+
+{
+    "name":"public"
+}
+### //get erga cat
+GET http://localhost:5000/ergacat
+
+
+### //create Ypo
+POST http://localhost:5000/ypo
+Content-Type: application/json
+
+{
+    "provider": "hiiiiuiiii",
+    "invoice_date": "2000-02-02",
+    "total_owed_ammount": 25,
+    "ammount_vat": 23,
+    "erga_id": null
+}
+### // GET YPO
+GET http://localhost:5000/ypo
+
+### // GET YPO
+GET http://localhost:5000/ypo/1
+
+### // PATCH YPO
+PATCH http://localhost:5000/ypo/1
+Content-Type: application/json
+
+{
+   "provider": "ikafjfaiijaf",
+    "invoice_date": "2004-04-04",
+    "total_owed_ammount": 252,
+    "ammount_vat": 232,
+    "erga_id": null
+}
+
+### // Delete Ypo
+DELETE http://localhost:5000/ypo/1
+
+### //get Tags
+GET http://localhost:5000/tags
+
+### //create Tags
+POST http://localhost:5000/tags
+Content-Type: application/json
+
+{
+    "name": "JFJFJJJFJFJF"
+}
+
+
+
+### //get Tags
+GET http://localhost:5000/tags/1
+
+
+### // PATCH TAGS
+PATCH http://localhost:5000/tags/1
+Content-Type: application/json
+
+{
+   "name": "AAAAAAAAAAAAAAAAAA"
+}
+
+### // Delete tags
+DELETE http://localhost:5000/tags/1
+
+### // GET DOSEIS
+GET http://localhost:5000/doseis_by_ypo/22
+
+
+### //create Doseis
+POST http://localhost:5000/doseis
+Content-Type: application/json
+
+{
+    "ammount": 24,
+    "actual_payment_date": "2005-06-03",
+    "estimate_payment_date": "2006-05-06",
+    "status": "hskjfhaalha",
+    "ypoxreoseis_id":2
+}
+
+
+
+### // GET DOSEIS
+GET http://localhost:5000/doseis
+
+
+### // PATCH doseis
+PATCH http://localhost:5000/doseis/1
+Content-Type: application/json
+
+{
+   "ammount": 255,
+    "actual_payment_date": "2007-08-07",
+    "estimate_payment_date": "2016-06-06",
+    "status": "HHHHHHHHHHHHHHHHHHHHHH",
+    "ypoxreoseis_id":2
+}
+
+### // Delete Doseis
+DELETE http://localhost:5000/doseis/1
+
+### // GET thy
+GET http://localhost:5000/thy
+
+### // GET thy
+GET http://localhost:5000/thy/1
+
+### //create THY
+POST http://localhost:5000/thy
+Content-Type: application/json
+
+{
+    "ypoxreoseis_id":2,
+    "tags_id": 2
+}
+
+### //update thy
+PATCH http://localhost:5000/thy/1
+Content-Type: application/json
+
+{
+    "ypoxreoseis_id":2,
+    "tags_id": 1
+}
+
+
+### // Delete thy
+DELETE http://localhost:5000/thy/1
+
+### // Create Ypo
+POST http://localhost:5000/ypoquery
+Content-Type: application/json
+
+{
+    "provider": "aaaaaaaaaaaaaaa",
+    "erga_id": null,
+    "invoice_date": "2008-08-08",
+    "total_owed_ammount": 221,
+    "ammount_vat": 251,
+    "tags_id": [2,4]
+}
+
+### // Get Ypo
+GET http://localhost:5000/ypoquery
+
+
+
+### // Get Ypo By Id
+GET http://localhost:5000/ypoquery/48
+
+### //Update Ypo by Id
+PATCH http://localhost:5000/ypoquery/22
+Content-Type: application/json
+
+{
+    "provider": "aaaaaaaaaa",
+    "erga_id": null,
+    "invoice_date": "2010-06-04",
+    "total_owed_ammount": 5,
+    "ammount_vat": 5,
+    "tags_id": [2,4]
+}
+
+
+### //Delete Ypo by Id
+DELETE  http://localhost:5000/ypoquery/23
+
+
+### //GET YPO by Id
+GET http://localhost:5000/ypotags/51
+
+
+### //GET YPO by Id
+GET http://localhost:5000/income_tim
+
+
+### //GET YPO by Id
+GET http://localhost:5000/getTim_From_Income
+
+### 
+//Login user
+POST  https://api.insight.cmtprooptiki.gr:5005/login
+Content-Type: application/json
+
+{
+    "email":"admin3@gmail.com",
+    "password":"123456"
+  
+}
+### //Login user
+POST  http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"admin@gmail.com",
+    "password":"123456"
+  
+}
+
+### //GET YPO by Id
+GET https://api.cashflow.cmtprooptiki.gr:4002/ypoquery
+
+
+###
+// Create a useradmin
+POST https://api.insight.cmtprooptiki.gr:5005/users
+Content-Type: application/json
+
+{
+    "name":"ilias",
+    "email":"admin3@gmail.com",
+    "password":"123456",
+    "confPassword":"123456",
+    "profileImage":null,
+    "role":"admin"
+
+}
+
+### 
+//Login user
+PATCH  https://api.cashflow.cmtprooptiki.gr:4002/budget/1
+Content-Type: application/json
+
+{
+    "ammount":153333,
+    "date": "2010-06-04" 
+  
+}
+
+### //GET YPO by Id
+GET https://api.insight.cmtprooptiki.gr:5005/users/c1f08bb1-162f-4c5b-8066-13ca12302571
+
+
+
+### //GET YPO by Id
+GET https://api.insight.cmtprooptiki.gr:5005/users/dayoff-hourly-rates
+
+
+#########
+GET https://api.insight.cmtprooptiki.gr:5005/summary?startdate=2022-01-01&enddate=2025-05-01&filter=inactive
+
+
+#############
+GET https://api.insight.cmtprooptiki.gr:5005/projects/budget?projectName=Funding Cancer 2024
+ 
+#############
+GET http://localhost:5000/project-users-monthly-costs?projectName=Funding Cancer 2024&year=2025
+ 
+ 
+ 
+#############
+GET https://api.insight.cmtprooptiki.gr:5005/summary/project-users-monthly-hours?projectName=Funding Cancer 2024&year=2025
+
+
+#######
+### Update hourly rate for a user
+PATCH https://api.insight.cmtprooptiki.gr:5005/update-hourly-rate
+Content-Type: application/json
+ 
+{
+  "user_id": 2,
+  "hourly_rate": 45.5
+}
+ 
+#############
+GET https://api.insight.cmtprooptiki.gr:5005/active-count?startdate=2022-01-01&enddate=2025-05-01
+
+
+#############
+GET https://api.insight.cmtprooptiki.gr:5005/active-count-project?startdate=2022-01-01&enddate=2025-05-01
+
+
+##############
+GET http://localhost:5000/timesheets/user-expected-vs-submitted-hours?startdate=2025-01-01&enddate=2025-05-01
